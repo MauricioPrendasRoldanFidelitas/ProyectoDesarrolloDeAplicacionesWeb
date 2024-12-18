@@ -3,55 +3,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 
-    <head th:fragment="head">
-        <title>TiendaInstrumentos</title>
-        <meta charset="UTF-8"/>
-        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
-        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
-        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-        <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+<head th:fragment="head">
+    <title>TiendaInstrumentos</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <header th:fragment="header" class="header fixed-top">
-            <!-- Barra de navegación -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Tienda de Música</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <!-- Menú de navegación -->
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/productos">Productos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/productos/ofertas">Ofertas</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/productos/contacto">Contacto</a></li>
-                        </ul>
-                        <!-- Botones de registro e inicio de sesión -->
-                        <div class="d-flex align-items-center me-3">
-                            <a href="/registro" class="btn btn-outline-light me-2">Registrarse</a>
-                            <a href="/login" class="btn btn-success">Iniciar Sesión</a>
-                        </div>
-                        <!-- Barra de búsqueda -->
-                        <form class="d-flex" action="/productos/busqueda" method="get">
-                            <input class="form-control me-2" type="search" name="q" placeholder="Buscar productos" aria-label="Buscar" required>
-                                <button class="btn btn-outline-success" type="submit">Buscar</button>
-                        </form>
-                    </div>
+<header th:fragment="header" class="header fixed-top">
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Tienda de Música</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Menú de navegación -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/productos/ofertas">Ofertas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/productos/contacto">Contacto</a></li>
+                </ul>
+                <!-- Botones de registro e inicio de sesión -->
+                <div class="d-flex align-items-center me-3">
+                    <a href="/usuarios/registro" class="btn btn-outline-light me-2">Registrarse</a>
+                    <a href="/login" class="btn btn-success">Iniciar Sesión</a>
                 </div>
-            </nav>
-        </header>
-
-
-
-        <footer th:fragment="footer" class="p-2 mt-5 bg-info text-white text-center fixed-bottom lead">
-            &COPY;2024 Derechos reservados
-        </footer>
-    </body>
+                <!-- Barra de búsqueda -->
+                <form class="d-flex" action="/productos/busqueda" method="get">
+                    <input class="form-control me-2" type="search" name="q" placeholder="Buscar productos" aria-label="Buscar" required>
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+<footer th:fragment="footer" class="p-2 mt-5 bg-info text-white text-center fixed-bottom lead">
+    &COPY;2024 Derechos reservados
+</footer>
+</body>
 </html>

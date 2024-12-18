@@ -8,6 +8,7 @@
 </head>
 <body>
     <header th:replace="~{layout/plantilla :: header}"></header>
+    <div class="container mt-4">
     <h1>Iniciar Sesión</h1>
     <form action="/login" method="post">
         <label for="correo">Correo:</label>
@@ -18,6 +19,7 @@
 
         <button type="submit">Iniciar Sesión</button>
     </form>
+    </div>
     <p th:if="${error}" th:text="${error}" style="color:red;"></p>
 </body>
 </html>

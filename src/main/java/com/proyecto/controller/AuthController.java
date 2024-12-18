@@ -56,13 +56,15 @@ public class AuthController {
     public String iniciarSesion(
             @RequestParam String correo,
             @RequestParam String contraseña,
-            Model model
-    ) {
+            Model model) {
         if (usuarioService.autenticarUsuario(correo, contraseña)) {
-            return "redirect:/inicio"; // Redirigir a la página principal o dashboard
+            // Inicio de sesión exitoso: redirigir al inicio o dashboard
+            return "redirect:/";
         } else {
+            // Credenciales incorrectas: mostrar mensaje de error
             model.addAttribute("error", "Correo o contraseña incorrectos.");
-            return "login"; // Mostrar el formulario de inicio de sesión nuevamente
+            return "login"; // Retorna al formulario de login
         }
     }
+
 }
