@@ -15,22 +15,6 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    // Registro de usuario
-    /*@PostMapping("/registro")
-    public ResponseEntity<String> registrarUsuario(@ModelAttribute Usuario usuario) {
-        boolean registrado = usuarioService.registrarUsuario(usuario);
-        if (registrado) {
-            return ResponseEntity.ok("Usuario registrado con éxito.");
-        } else {
-            return ResponseEntity.badRequest().body("Error: El usuario ya existe.");
-        }
-    }*/
-
-    /*
-        return ResponseEntity.ok, solo funciona para peticiones tipo request de retorno JSON, etc. no para
-        formularios
-    */
-
     @GetMapping("/registro")
     public String mostrarFormularioRegistro(Model model) {
         model.addAttribute("usuario", new Usuario()); // Asegúrate de inicializar el objeto
@@ -40,7 +24,6 @@ public class UsuarioController {
     @PostMapping("/registro")
     public String registrarUsuario(@ModelAttribute Usuario usuario, Model model) {
         boolean registrado = usuarioService.registrarUsuario(usuario);
-
         if (registrado) {
             model.addAttribute("mensaje", "Usuario registrado con éxito.");
             return "registro";
@@ -49,8 +32,4 @@ public class UsuarioController {
             return "registro";
         }
     }
-
-    /*
-    * Esta seccion la quitaria y la pondria en otro controller, para que sea tipo RequestController
-    * */
 }

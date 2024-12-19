@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Iniciar Sesión</title>
-    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
-    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
-</head>
-<body>
-    <header th:replace="~{layout/plantilla :: header}"></header>
-    <div class="container mt-4">
-    <h1>Iniciar Sesión</h1>
-    <form action="/login" method="post">
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" name="correo" required><br>
+<html xmlns:th="http://www.thymeleaf.org">
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <title>Iniciar Sesión</title>
+            <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
+            <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+        </head>
+        <body>
+            <header th:replace="~{layout/plantilla :: header}"></header>
+            <div class="container mt-4">
+                <h1>Iniciar Sesión</h1>
+                <form th:action="@{/login}" method="post">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required>
 
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña" required><br>
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" name="contraseña" required>
 
-        <button type="submit">Iniciar Sesión</button>
-    </form>
-    </div>
-    <p th:if="${error}" th:text="${error}" style="color:red;"></p>
-</body>
-</html>
+                    <button type="submit">Iniciar sesión</button>
+                </form>
+            </div>
+            <p th:if="${error}" th:text="${error}" style="color:red;"></p>
+        </body>
+    </html>

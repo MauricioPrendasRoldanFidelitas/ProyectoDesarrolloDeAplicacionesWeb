@@ -2,7 +2,7 @@
 <html xmlns="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8"/>
-        <title>TiendaInstrumentos</title>
+        <title th:text="${titulo}"></title>
         <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
         <link rel="stylesheet" th:href="@{/css/styles.css}"/>
     </head>
@@ -10,7 +10,7 @@
         <header th:replace="~{layout/plantilla :: header}"></header>
 
         <div class="container mt-4">
-            <h1 class="text-center mb-4">Tienda</h1>
+            <h1 class="text-center mb-4" th:text="${titulo}"></h1>
             <div class="row" th:if="${productos.isEmpty()}">
                 <p>No hay productos disponibles en este momento.</p>
             </div>
@@ -26,7 +26,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <footer th:replace="~{layout/plantilla :: footer}"></footer>

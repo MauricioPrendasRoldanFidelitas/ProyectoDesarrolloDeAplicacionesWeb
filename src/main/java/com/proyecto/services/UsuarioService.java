@@ -27,14 +27,24 @@ public class UsuarioService {
     }
 
     // Autenticar usuario
-    public boolean autenticarUsuario(String correo, String password) {
+    public boolean autenticarUsuario(String correo, String contraseña) {
         Usuario usuario = usuarioRepository.findByCorreo(correo);
-        // Verificar si el usuario existe y si la contraseña coincide
-        return usuario != null && passwordEncoder.matches(password, usuario.getContraseña());
+        System.out.println("Usuario encontrado: " + (usuario != null));
+        if (usuario != null) {
+            return passwordEncoder.matches(contraseña, usuario.getContraseña());
+        }
+        return false;
     }
 
     public Usuario findByNombre(String nombre) {
         Usuario usuario = usuarioRepository.findByNombre(nombre);
         return usuario;
     }
+    
+    public Usuario findByCorreo(String correo){
+        Usuario usuario = usuarioRepository.findByCorreo(correo);
+        return usuario;
+    }
+    
+    
 }
